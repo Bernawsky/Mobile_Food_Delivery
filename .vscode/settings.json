@@ -1,0 +1,8 @@
+{
+  "editor.formatOnSave": true, // Desativa a formatação ao salvar
+  "prettier.printWidth": 140, // Aumenta a largura máxima antes de quebrar linhas
+  "prettier.singleQuote": true, // Usa aspas simples, se preferir
+  "prettier.arrowParens": "avoid", // Evita parênteses desnecessários em arrow functions
+  "prettier.proseWrap": "never", // Evita quebras em textos
+  "prettier.semi": true // Inclui ponto e vírgula ao final
+}
