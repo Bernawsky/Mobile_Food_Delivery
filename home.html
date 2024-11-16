@@ -13,61 +13,442 @@
 
 <body id="BodyHome">
 
-    <header id="header-home">
-        <i class="fa-solid fa-bars"></i>
-        <i class="fa-solid fa-bag-shopping"></i>
+    <header id="HeaderHome">
+        <i id="NavBar" onclick="OpenNavBar()" class="fa-solid fa-bars"></i>
+        <i onclick="OpenCart()" class="fa-solid fa-bag-shopping"></i>
     </header>
 
-    <div class="container-text-home">
-        <div id="welcomeMessage">
-            <h1>Welcome</h1><br>
-            <p>Bem-vindo ao nosso site!</p>
+    <div class="ContainerCart" id="ContainerCart">
+        <div class="Tittle-Cart">
+            <i onclick="CloseCart()" class="fa-solid fa-x"></i>
+            <h1>Your Shopping Cart</h1>
         </div>
 
-        <div id="menu">
-            <h1>Menu</h1><br>
-            <p>Homemade meals prepared with love. Richest ingredients</p>
+        <div class="CartItems">
+            <div class="ScrollCart">
+                <div class="Item">
+                    <div class="NameItem">
+                        <span>Lasanha de queijo</span>
+                        <div class="Quantity">
+                            <i class="fa-solid fa-minus"></i>
+                            <span id="Quantity">1</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="PriceItem" id="PriceItem">$8.00</div>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="Item">
+                    <div class="NameItem">
+                        <span>Pizza Calabresa</span>
+                        <div class="Quantity">
+                            <i class="fa-solid fa-minus"></i>
+                            <span id="Quantity">1</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="PriceItem" id="PriceItem">$8.00</div>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+                <div class="Item">
+                    <div class="NameItem">
+                        <span>Pizza Calabresa</span>
+                        <div class="Quantity">
+                            <i class="fa-solid fa-minus"></i>
+                            <span id="Quantity">1</span>
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                    <div class="PriceItem" id="PriceItem">$8.00</div>
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </div>
+            <br>
+            <hr id="HrScrollCart">
+            <br>
+            <div class="ContainerTotal">
+                <div class="Total">
+                    <span>Purchase Total</span>
+                    <span>$8.00</span>
+                </div>
+                <div class="VoucherCode">
+                    <span>VoucherCode?</span>
+                    <input type="text" placeholder="Enter Here">
+                </div>
+                <div class="ValueAddedTax">
+                    <span>Vat 5%</span>
+                    <span>$1.00</span>
+                </div>
+            </div><br>
+            <div class="SubTotal">
+                <span>Sub Total</span>
+                <span>$14.00</span>
+            </div>
+            <button class="Button-BackShopping"><i class="fa-solid fa-arrow-left"></i> Continue Shopping</button>
+            <button class="Button-Checkout">Checkout</button>
         </div>
 
-        <form action="search">
-            <i id="iconSearch" class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" placeholder="Search Menu">
+
+
+        <hr style="position: absolute; bottom: 14vh;">
+        <div class="Iconslinks">
+            <i class="fa-regular fa-credit-card"></i>
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+    </div>
+
+    <div class="ContainerBlur" id="ContainerBlur" onclick="CloseNavBar()">
+        <div class="ContainerNavigation" id="ContainerNavigation">
+            <h2 id="Name"></h2><br>
+            <hr>
+            <nav>
+                <div class="ContainerLinks">
+                    <i class="fa-regular fa-user"></i><a class="Link1" onclick="OpenProfile()">Profile</a>
+                </div>
+                <hr>
+                <div class="ContainerLinks">
+                    <i class="fa-regular fa-heart"></i><a class="Link2" onclick="OpenWishList()">Wishlist</a>
+                </div>
+                <hr>
+                <div class="ContainerLinks">
+                    <i class="fa-solid fa-medal"></i><a class="Link3" onclick="OpenPoints()">Loyalty
+                        Points</a>
+                </div>
+                <hr>
+                <div class="ContainerLinks">
+                    <i class="fa-regular fa-credit-card"></i><a class="Link4" onclick="" id="PaymentLink">Payment
+                        Methods</a>
+                </div>
+            </nav>
+        </div>
+
+        <i id="IconClose" onclick="CloseNavBar()" class="fa-solid fa-x"></i>
+    </div>
+    </div>
+
+    <div class="ContainerProfile" id="ContainerProfile">
+        <div class="Tittle-Profile">
+            <i onclick="CloseProfile()" class="fa-solid fa-x"></i>
+            <h1>Profile</h1>
+            <hr>
+        </div>
+
+        <div class="PersonalData">
+            <form action="">
+                <div class="Data">
+                    <input id="UserName" type="text" disabled>
+                    <i onclick="EnableInput()" class="fa-regular fa-pen-to-square"></i>
+                </div>
+                <div class="Data">
+                    <input id="UserEmail" type="email" disabled>
+                    <i onclick="EnableInput()" class="fa-regular fa-pen-to-square"></i>
+                </div>
+                <div class="Data">
+                    <input id="UserPassword" type="text" disabled>
+                    <i onclick="EnableInput()" class="fa-regular fa-pen-to-square"></i>
+                </div>
+                <button id="Button-SaveProfile" class="Button-SaveProfile" onclick="SaveProfile()" type="submit"
+                    disabled>Save</button>
+            </form>
+        </div>
+
+        <hr style="position: absolute; bottom: 14vh;">
+        <div class="Iconslinks">
+            <i class="fa-regular fa-credit-card"></i>
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+    </div>
+
+    <div class="Container-WishList" id="Container-WishList">
+        <div class="Tittle-WishList">
+            <i onclick="CloseWishList()" class="fa-solid fa-x"></i>
+            <h1>WishList</h1>
+            <hr>
+            <p>You have favourited <span>X</span> dishes </p>
+        </div>
+
+        <div class="Scroll-Favourited">
+            <div class="Container-Favourited">
+                <div class="Img-WishList">
+                    <img src="Assets/img/img1.jpg" alt="">
+                </div>
+                <div class="Container-Information">
+                    <div class="Container-NameFood">
+                        <h1>Name Food</h1>
+                        <p>with COKE</p>
+                    </div>
+                    <div class="Container-People-Favourited">
+                        <i class="fa-solid fa-heart"></i><br>
+                        <span>X people like this</span>
+                    </div>
+                </div>
+                <span id="Price-WishList">$7.00</span>
+                <Button class="Button-BuyNow">Buy Now</Button>
+            </div>
+            <div class="Container-Favourited">
+                <div class="Img-WishList">
+                    <img src="Assets/img/img1.jpg" alt="">
+                </div>
+                <div class="Container-Information">
+                    <div class="Container-NameFood">
+                        <h1>Name Food</h1>
+                        <p>with COKE</p>
+                    </div>
+                    <div class="Container-People-Favourited">
+                        <i class="fa-solid fa-heart"></i><br>
+                        <span>X people like this</span>
+                    </div>
+                </div>
+                <span id="Price-WishList">$7.00</span>
+                <Button class="Button-BuyNow">Buy Now</Button>
+            </div>
+            <div class="Container-Favourited">
+                <div class="Img-WishList">
+                    <img src="Assets/img/img1.jpg" alt="">
+                </div>
+                <div class="Container-Information">
+                    <div class="Container-NameFood">
+                        <h1>Name Food</h1>
+                        <p>with COKE</p>
+                    </div>
+                    <div class="Container-People-Favourited">
+                        <i class="fa-solid fa-heart"></i><br>
+                        <span>X people like this</span>
+                    </div>
+                </div>
+                <span id="Price-WishList">$7.00</span>
+                <Button class="Button-BuyNow">Buy Now</Button>
+            </div>
+            <div class="Container-Favourited">
+                <div class="Img-WishList">
+                    <img src="Assets/img/img1.jpg" alt="">
+                </div>
+                <div class="Container-Information">
+                    <div class="Container-NameFood">
+                        <h1>Name Food</h1>
+                        <p>with COKE</p>
+                    </div>
+                    <div class="Container-People-Favourited">
+                        <i class="fa-solid fa-heart"></i><br>
+                        <span>X people like this</span>
+                    </div>
+                </div>
+                <span id="Price-WishList">$7.00</span>
+                <Button class="Button-BuyNow">Buy Now</Button>
+            </div>
+        </div>
+        <hr style="position: absolute; bottom: 14vh;">
+        <div class="Iconslinks">
+            <i class="fa-regular fa-credit-card"></i>
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+    </div>
+
+    <div class="ContainerPoints" id="ContainerPoints">
+        <div class="Tittle-Points">
+            <i onclick="ClosePoints()" class="fa-solid fa-x"></i>
+            <h1>Loyalty Points</h1>
+            <hr>
+            <p id="NamePoints">Name
+            <p>
+        </div>
+
+        <div class="Text-Points">
+            <i class="fa-solid fa-medal"></i>
+            <h2>509 Points</h2>
+            <p>Convert Points to Purchase Voucher Code.</p>
+            <p>You need to 1000 points to get 1000 OFF your order.<br>Order today to get more points</p>
+            <Button class="Button-Points">Convert</Button>
+        </div>
+
+
+        <hr style="position: absolute; bottom: 14vh;">
+        <div class="Iconslinks">
+            <i class="fa-regular fa-credit-card"></i>
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+    </div>
+
+    <div class="Container-TextHome">
+        <h1>Menu</h1><br>
+        <p>Homemade meals prepared with love. Richest ingredients</p><br>
+        <form action="">
+            <div class="ContainerSearch">
+                <input type="search" aria-label="Search" placeholder="Search Menu">
+                <button id="ButtonSearch"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
         </form>
     </div>
 
-    <div class="container-foods">
-        <div class="food">
-            <img src="Assets/img/sumptous 1.png" alt="">
-            <h2>Main Dishes</h2>
-            <div class="container-descriptions">
-                <span id="red-color"><i class="fa-solid fa-star"></i> 4.9</span>
-                <span>(355 ratings) </span>
-                <span>- Start at</span><span id="red-color">$1.53</span>
+    <div class="ContainerFoods">
+        <div class="Food" onclick="OpenDisplayFood(this)">
+            <div class="Image1">
+                <img src="Assets/img/img1.jpg">
+            </div>
+            <div id="Description1" class="ContainerDescriptions1">
+                <h2>Food1</h2>
+                <span id="red-color"><i class="fa-solid fa-star"></i> 4.4</span>
+                <span>(231 ratings) </span>
+                <span>- Start at</span><span id="red-color">$4.53</span>
+            </div>
+            <div class="ContainerDescription2" id="Description2">
+                <i id="IconClose-Description2" onclick="CloseDisplayFood(this.parentElement)" class="fa-solid fa-x"></i>
+                <div class="Part1">
+                    <div class="Description">
+                        <h2>Description</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, molestiae? Consequatur
+                            corporis
+                            impedit fugiat alias eius doloribus a
+                        </p>
+                    </div>
+                    <div class="Avaliation">
+                        <span>HERE STARS</span>
+                    </div>
+                </div>
+                <div class="Part2">
+                    <h2>Ingredients</h2>
+                    <div class="Ingredients">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                    </div>
+                </div>
+                <div class="Part3">
+                    <h2>Additions</h2>
+                    <select id="Additions">
+                        <option value="">Option1</option>
+                        <option value="">Option3</option>
+                        <option value="">Option3</option>
+                    </select>
+                </div><br>
+                <div class="Part4">
+                    <span>$4.00</span>
+                    <div class="QuantityFood">
+                        <i class="fa-solid fa-minus"></i>
+                        <span id="QuantityFood">1</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <i onclick="OpenCart()" id="BagIcon" class="fa-solid fa-bag-shopping"></i>
+                </div>
             </div>
         </div>
 
-        <div class="food">
-            <img src="Assets/img/sumptous 1.png" alt="">
-            <h2>Main Dishes</h2>
-            <div class="container-descriptions">
-                <span id="red-color"><i class="fa-solid fa-star"></i> 4.9</span>
-                <span>(355 ratings) </span>
-                <span>- Start at</span><span id="red-color">$1.53</span>
+        <div class="Food" onclick="OpenDisplayFood(this)">
+            <div class="Image1">
+                <img src="Assets/img/img2.jpg">
+            </div>
+            <div id="Description1" class="ContainerDescriptions1">
+                <h2>Food1</h2>
+                <span id="red-color"><i class="fa-solid fa-star"></i> 4.4</span>
+                <span>(231 ratings) </span>
+                <span>- Start at</span><span id="red-color">$4.53</span>
+            </div>
+            <div class="ContainerDescription2" id="Description2">
+                <i id="IconClose-Description2" onclick="CloseDisplayFood(this.parentElement)" class="fa-solid fa-x"></i>
+                <div class="Part1">
+                    <div class="Description">
+                        <h2>Description</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, molestiae? Consequatur
+                            corporis
+                            impedit fugiat alias eius doloribus a
+                        </p>
+                    </div>
+                    <div class="Avaliation">
+                        <span>HERE STARS</span>
+                    </div>
+                </div>
+                <div class="Part2">
+                    <h2>Ingredients</h2>
+                    <div class="Ingredients">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                    </div>
+                </div>
+                <div class="Part3">
+                    <h2>Additions</h2>
+                    <select id="Additions">
+                        <option value="">Option1</option>
+                        <option value="">Option3</option>
+                        <option value="">Option3</option>
+                    </select>
+                </div><br>
+                <div class="Part4">
+                    <span>$4.00</span>
+                    <div class="QuantityFood">
+                        <i class="fa-solid fa-minus"></i>
+                        <span id="QuantityFood">1</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <i onclick="OpenCart()" id="BagIcon" class="fa-solid fa-bag-shopping"></i>
+                </div>
             </div>
         </div>
 
-        <div class="food">
-            <img src="Assets/img/sumptous 1.png" alt="">
-            <h2>Main Dishes</h2>
-            <div class="container-descriptions">
-                <span id="red-color"><i class="fa-solid fa-star"></i> 4.9</span>
-                <span>(355 ratings) </span>
-                <span>- Start at</span><span id="red-color">$1.53</span>
+        <div class="Food" onclick="OpenDisplayFood(this)">
+            <div class="Image1">
+                <img src="Assets/img/img3.jpg">
+            </div>
+            <div id="Description1" class="ContainerDescriptions1">
+                <h2>Food1</h2>
+                <span id="red-color"><i class="fa-solid fa-star"></i> 4.4</span>
+                <span>(231 ratings) </span>
+                <span>- Start at</span><span id="red-color">$4.53</span>
+            </div>
+            <div class="ContainerDescription2" id="Description2">
+                <i id="IconClose-Description2" onclick="CloseDisplayFood(this.parentElement)" class="fa-solid fa-x"></i>
+                <div class="Part1">
+                    <div class="Description">
+                        <h2>Description</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, molestiae? Consequatur
+                            corporis
+                            impedit fugiat alias eius doloribus a
+                        </p>
+                    </div>
+                    <div class="Avaliation">
+                        <span>HERE STARS</span>
+                    </div>
+                </div>
+                <div class="Part2">
+                    <h2>Ingredients</h2>
+                    <div class="Ingredients">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                        <img src="Assets/img/img13.jpg">
+                    </div>
+                </div>
+                <div class="Part3">
+                    <h2>Additions</h2>
+                    <select id="Additions">
+                        <option value="">Option1</option>
+                        <option value="">Option3</option>
+                        <option value="">Option3</option>
+                    </select>
+                </div><br>
+                <div class="Part4">
+                    <span>$4.00</span>
+                    <div class="QuantityFood">
+                        <i class="fa-solid fa-minus"></i>
+                        <span id="QuantityFood">1</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+                    <i onclick="OpenCart()" id="BagIcon" class="fa-solid fa-bag-shopping"></i>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="Assets/scrip.js"></script>
+    <script src="Assets/home.js"></script>
 </body>
 
 </html>

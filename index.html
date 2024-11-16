@@ -11,7 +11,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="body-welcome">
+<body class="BodyWelcome">
 
     <div class="container-welcome">
         <img id="logo" src="Assets/img/logo mock.png" alt="">
@@ -22,10 +22,16 @@
                 sound delicious???
             </p><br>
 
-            <a class="button-arrow-right" href="login.html"><i class="fa-solid fa-arrow-right"></i></a>
+            <button id="PageLogin" class="Button-ArrownRigth"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
     </div>
 
+    <script>
+        document.getElementById('PageLogin').addEventListener('click', function (event) {
+            event.preventDefault();
+            window.location.href = "login.html";
+        })
+    </script>
 </body>
 
 </html>

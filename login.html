@@ -17,17 +17,23 @@
         <img src="Assets/img/logo mock.png" alt="">
     </div>
 
-    <div class="SingIn" id="SingIn">
-        <form action="" id="Form-SingIn">
-            <input id="Email-SingIn" type="email" placeholder="Email" autocomplete="email" required>
+    <div class="SignIn" id="SignIn">
+        <form action="" id="Form-SignIn">
+
+            <input id="Name-SignIn" type="text" placeholder="Name" autocomplete="name" required>
+
+            <input id="Email-SignIn" type="email" placeholder="Email" autocomplete="email" required>
+
             <div class="HidePassword">
-                <input id="Password-SingIn" type="password" placeholder="Password" autocomplete="current-password"
-                    required>
-                <i id="Icon-Password-SingIn" class="fa-solid fa-eye"></i>
+                <input id="Password-SignIn" type="password" placeholder="Password" autocomplete="current-password"
+                    minlength="4" required>
+                <i id="Icon-Password-SignIn" class="fa-solid fa-eye"></i>
             </div>
+
             <p id="Forgot">Forgot Password?</p>
 
-            <button id="Button-SingIn" type="submit" class="Button-SingIn">Eat Away!</button>
+            <button id="Button-SignIn" onclick="collectSignInData()" type="submit" class="Button-SignIn">Eat
+                Away!</button>
         </form>
 
         <div class="ModalForgot" id="ModalForgot">
@@ -60,8 +66,13 @@
             <p>Your password must be at-least 8 characters long</p>
 
             <form action="">
-                <input type="password" placeholder="Enter new password" autocomplete="new-password" required>
-                <input type="password" placeholder="Reconfirm new password" autocomplete="new-password" required>
+                <!-- Campo opcionalmente oculto para nome de usuário, importante para acessibilidade -->
+                <input id="username" type="text" placeholder="Username" aria-label="Username" autocomplete="username"
+                    required style="display:none;">
+                <input id="New-Password" type="password" placeholder="Enter new password" autocomplete="new-password"
+                    minlength="4" required>
+                <input id="Confirm-New-Password" type="password" placeholder="Reconfirm new password"
+                    autocomplete="new-password" minlength="4" required>
                 <button id="Button-NewPassword" type="submit">Eat Away!</button>
             </form>
         </div>
@@ -79,21 +90,21 @@
             <i id="icon-chevron" class="fa-solid fa-chevron-up"></i><br>Sing Up
         </div>
 
-        <div class="SingUp" id="SingUp">
-            <form id="Form-SingUp" action="">
-                <input id="Name-SingUp" type="text" placeholder="Name" autocomplete="name" required>
-                <input id="Email-SingUp" type="email" placeholder="E-mail" autocomplete="email" required>
+        <div class="SignUp" id="SignUp">
+            <form id="Form-SignUp" action="">
+                <input id="Name-SignUp" type="text" placeholder="Name" autocomplete="name" required>
+                <input id="Email-SignUp" type="email" placeholder="E-mail" autocomplete="email" required>
                 <div class="HidePassword">
-                    <input id="Password-SingUp" type="password" autocomplete="new-password" placeholder="Password"
-                        required>
-                    <i id="Icon-Password-SingUp" class="fa-solid fa-eye"></i>
+                    <input id="Password-SignUp" type="password" autocomplete="new-password" placeholder="Password"
+                        minlength="4" required>
+                    <i id="Icon-Password-SignUp" class="fa-solid fa-eye"></i>
                 </div>
                 <div class="HidePassword">
-                    <input id="Confirm-Password-SingUp" type="password" autocomplete="new-password"
+                    <input id="Confirm-Password-SignUp" type="password" autocomplete="new-password" minlength="4"
                         placeholder="Confirm Password" required>
-                    <i id="Icon-Confirm-Password-SingUp" class="fa-solid fa-eye"></i>
+                    <i id="Icon-Confirm-Password-SignUp" class="fa-solid fa-eye"></i>
                 </div>
-                <button type="submit" id="Button-SingUp" class="Button-SingUp">
+                <button type="submit" id="Button-SignUp" onclick="collectSignUpData()" class="Button-SignUp">
                     Never Hungry Again!
                 </button>
             </form><br>
